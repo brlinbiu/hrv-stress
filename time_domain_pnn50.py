@@ -46,7 +46,7 @@ rects2 = ax.bar(subject+(1*width), maths_true, width)
 ax.yaxis.set_major_formatter(ticker.PercentFormatter(xmax=1, decimals=1))
 ax.set_ylabel('pNN50')
 ax.set_xlabel('Subject #')
-ax.set_title('HRV for sitting and maths test')
+ax.set_title('pNN50 Results for sitting and maths test')
 ax.set_xticks(subject + width)
 ax.set_xticklabels(subject)
 ax.legend((rects1[0], rects2[0]), ('sitting', 'math'))
@@ -69,7 +69,7 @@ plt.bar(['sitting', 'math'],
         [avg_sitting_true, avg_maths_true],
         yerr=[sd_sitting_true, sd_maths_true],
         align='center', alpha=0.5, ecolor='black', capsize=10)
-plt.title("Sitting vs math")
+plt.title("Average and stardard value of pNN50 Results, Math vs sitting")
 plt.ylabel('pNN50')
 
 # calculate p value

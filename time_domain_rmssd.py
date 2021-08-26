@@ -43,7 +43,7 @@ rects2 = ax.bar(subject+(1*width), maths_true, width)
 
 ax.set_ylabel('nRMSSD')
 ax.set_xlabel('Subject #')
-ax.set_title('HRV for sitting and maths test')
+ax.set_title('nRMSSD results for sitting and maths test')
 ax.set_xticks(subject + width)
 ax.set_xticklabels(subject)
 ax.legend((rects1[0], rects2[0]), ('sitting', 'math'))
@@ -69,7 +69,7 @@ plt.title("Sitting vs math")
 plt.ylabel('nRMSSD')
 
 t, p = stats.ttest_rel(maths_true, sitting_true)
-print("Math vs sitting: p=", p)
+print("Average and stardard value of nRMSSD Results, Math vs sitting: p=", p)
 
 
 plt.show()
