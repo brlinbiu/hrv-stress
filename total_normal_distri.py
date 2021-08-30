@@ -10,9 +10,13 @@ import sys
 maths_true = []
 sitting_true = []
 
+'''
+nomalized distribution of total subjects
+'''
 total_subjects = 25
 subject = []
 
+# get subject data
 for i in range(total_subjects):
     print(i)
     sitting_class = GUDb(i, 'sitting')
@@ -20,6 +24,7 @@ for i in range(total_subjects):
     maths_class = GUDb(i, 'maths')
     maths_class.filter_data()
 
+    # get heart rate array accoring to rr sample
     if sitting_class.anno_cs_exists and maths_class.anno_cs_exists:
         subject.append(i)
 
@@ -52,6 +57,7 @@ pd_math = pd.DataFrame(maths_true, columns=["Real-time HR"])
 # plt.grid()
 # plt.show()
 
+#plot
 fig = plt.figure(figsize=(10, 6))
 ax1 = fig.add_subplot(2, 1, 1)  # subplot 1
 ax1.scatter(pd_math.index, pd_math.values)

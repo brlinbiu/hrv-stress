@@ -7,14 +7,19 @@ from hrv import HRV
 from ecg_gudb_database import GUDb
 import sys
 
+'''
+nomalized distribution of a signle subject
+'''
 maths_true = []
 sitting_true = []
 
+# get subject data
 sitting_class = GUDb(12, 'sitting')
 sitting_class.filter_data()
 maths_class = GUDb(12, 'maths')
 maths_class.filter_data()
 
+# get heart rate array accoring to rr sample
 if sitting_class.anno_cs_exists and maths_class.anno_cs_exists:
     hrv_class = HRV(sitting_class.fs)
 
@@ -25,7 +30,7 @@ pd_math = pd.DataFrame(hr_array, columns=["Real-time HR"])
 print(pd_math)
 print(stats.shapiro(hr_array))
 
-
+#plot
 fig = plt.figure(figsize=(10, 6))
 ax1 = fig.add_subplot(2, 1, 1)  # subplot 1
 ax1.scatter(pd_math.index, pd_math.values)

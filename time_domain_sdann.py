@@ -54,11 +54,18 @@ sd_maths_true = np.std(maths_true)
 avg_sitting_true = np.average(sitting_true)
 sd_sitting_true = np.std(sitting_true)
 
+
+# average of SDANN, sitting
 print(avg_sitting_true)
+# standard deviation of SDANN, sitting
 print(sd_sitting_true)
+# average of SDANN, math
 print(avg_maths_true)
+# standard deviation of SDANN, math
 print(sd_maths_true)
 
+
+#plot
 fig = plt.figure()
 
 plt.bar(['sitting', 'math'],
